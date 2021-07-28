@@ -28,7 +28,7 @@ public class FirstTest {
     //Первый тест, запуск на реальном Nexus 5
 
     @Before
-    @Step("Run driver and session")
+    //@Step("Run driver and session")
     public void setUp() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -45,7 +45,7 @@ public class FirstTest {
 
 
     @After
-    @Step("Remove driver and session")
+   // @Step("Remove driver and session")
     public void tearDown() {
         driver.quit();
     }
@@ -81,8 +81,8 @@ public class FirstTest {
     //Тест проверки отмены поиска
 
     @Test
-    @DisplayName("Test cancel Search")
-    @Description("We input request, wait result and clean search")
+    //@DisplayName("Test cancel Search")
+   // @Description("We input request, wait result and clean search")
     public void testCancelSearch() {
         waitForElementAndClick(
                 By.id("org.wikipedia:id/search_container"),
@@ -121,8 +121,8 @@ public class FirstTest {
     //Тест сравнения ожидаемой статьи
 
     @Test
-    @DisplayName("Test compare expected articles")
-    @Description("We find some article and compare title with expected text")
+    //@DisplayName("Test compare expected articles")
+    //@Description("We find some article and compare title with expected text")
     public void testCompareArticleTitle() {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
@@ -202,9 +202,9 @@ public class FirstTest {
     //Тест сохранения статьи, открытия списка и удаления статьи из списка
 
     @Test
-    @Features(value = {@Feature(value = "Search"), @Feature(value = "Article")})
-    @DisplayName("Test save article in list")
-    @Description("We save article in our folder and then delete it")
+    //@Features(value = {@Feature(value = "Search"), @Feature(value = "Article")})
+    //@DisplayName("Test save article in list")
+    //@Description("We save article in our folder and then delete it")
     public void saveFirstArticleToMyList() {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
@@ -309,8 +309,8 @@ public class FirstTest {
     //Тест поиска и проверки ненулевого результата через ассерт
 
     @Test
-    @Description("Тест поиска и проверки ненулевого результата через ассерт")
-    @Severity(value = SeverityLevel.BLOCKER)
+    //@Description("Тест поиска и проверки ненулевого результата через ассерт")
+   // @Severity(value = SeverityLevel.BLOCKER)
     public void testAmountOfNotEmptySearche() {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
@@ -352,8 +352,8 @@ public class FirstTest {
     //Тест проверки пустого результата поиска
 
     @Test
-    @Description("We test here empty search result")
-    @Severity(value = SeverityLevel.TRIVIAL)
+    //@Description("We test here empty search result")
+    //@Severity(value = SeverityLevel.TRIVIAL)
     public void testAmountOfEmptySearch() {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
@@ -392,8 +392,8 @@ public class FirstTest {
     //Тест смены ротации экрана на результате поиска
 
     @Test
-    @DisplayName("Change rotation and compare result title")
-    @Features(value = {@Feature(value = "Search"), @Feature(value = "Article"), @Features(value = "Condition")})
+   // @DisplayName("Change rotation and compare result title")
+   // @Features(value = {@Feature(value = "Search"), @Feature(value = "Article"), @Features(value = "Condition")})
     public void testChangesScreenRotationOnSearchResults() {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
@@ -461,9 +461,9 @@ public class FirstTest {
     //Тест ухода и возврата из бэкграунда
 
     @Test
-    @Severity(value = SeverityLevel.CRITICAL)
-    @Description("We test how work app in background")
-    @Features(value = {@Feature(value = "Search"), @Feature(value = "Condition")})
+    //@Severity(value = SeverityLevel.CRITICAL)
+   // @Description("We test how work app in background")
+   // @Features(value = {@Feature(value = "Search"), @Feature(value = "Condition")})
     public void testSearchArticleInBackground() {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
@@ -672,10 +672,10 @@ public class FirstTest {
     //Home work Ex5
 
     @Test
-    @DisplayName("Two article")
-    @Description("Find two articles, add both into Lists, then one of thev delitin")
-    @Severity(value = SeverityLevel.NORMAL)
-    @Features(value = {@Feature(value = "Search"), @Feature(value = "Article")})
+  //  @DisplayName("Two article")
+   // @Description("Find two articles, add both into Lists, then one of thev delitin")
+   // @Severity(value = SeverityLevel.NORMAL)
+   // @Features(value = {@Feature(value = "Search"), @Feature(value = "Article")})
     public void testSearchTwoArticles()
     {
         waitForElementAndClick(
@@ -856,7 +856,7 @@ public class FirstTest {
     //Тест, который проверяет, что поле ввода для поиска статьи содержит текст Search Wikipedia
 
     @Test
-    @Severity(value = SeverityLevel.MINOR)
+   // @Severity(value = SeverityLevel.MINOR)
     public void testInputSearchContainsText()
     {
         assertElementHasText(
@@ -884,7 +884,7 @@ public class FirstTest {
     //Тест, который ищет слово, убеждается, что найдено несколько статей и отменяет поиск
 
     @Test
-    @Severity(value = SeverityLevel.NORMAL)
+    //@Severity(value = SeverityLevel.NORMAL)
     public void testCancelSearchFewResults()
     {
         waitForElementAndClick(
