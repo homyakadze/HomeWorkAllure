@@ -394,7 +394,7 @@ import java.util.List;
 
     @Test
     @DisplayName("Change rotation and compare result title")
-    @Features(value = {@Feature(value = "Search"), @Feature(value = "Article"), @Features(value = "Condition")})
+    @Features(value = {@Feature(value = "Search"), @Feature(value = "Article"), @Feature(value = "Condition")})
     public void testChangesScreenRotationOnSearchResults() {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
